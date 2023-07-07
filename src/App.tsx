@@ -1,9 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Signin from './pages/Signin';
-import Signup from './pages/Signup';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Signin from './pages/Signin'
+import Signup from './pages/Signup'
 import NavMenu from './components/NavMenu'
-import React from 'react';
-import './App.css';
+import './App.css'
 
 function App() {
  
@@ -17,5 +16,5 @@ function App() {
             </Routes>
       </BrowserRouter>
   );
-
-export default App;
+}
+export default App
