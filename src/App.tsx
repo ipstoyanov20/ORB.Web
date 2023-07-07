@@ -24,11 +24,11 @@ function App() {
   return (
     <>
       <div className="login">
-        <input type="email" onChange = {onChangeEmail} placeholder="Enter email"></input>
-        <input type="password" onChange = {onChangePassword} placeholder="Enter password"></input>
+        <input className='m-3' type="email" onChange = {onChangeEmail} placeholder="Enter email"></input>
+        <input className='m-3' type="password" onChange = {onChangePassword} placeholder="Enter password"></input>
       </div>
 
-      <button onClick={submit}>Login</button>
+      <button className='text-[#646cff] bg-black' onClick={submit}>Login</button>
     </>
   );
   
