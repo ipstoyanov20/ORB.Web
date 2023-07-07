@@ -4,20 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
-.inputDiv {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 5px;
-}
 
-.inputDiv > * {
-  width: 10rem;
-  height: 2rem;
-  text-align: center;
-}
-
-.buttons {
-  margin: 10px;
-  display:grid;
-  gap: 10px 10px;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
