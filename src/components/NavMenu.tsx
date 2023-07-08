@@ -10,13 +10,13 @@ function NavMenu() {
             Home
           </Link>
           <Link
-            to="/signup"
+            to="/register"
             className="rounded-md bg-black m-3 px-4 py-2 hover:bg-gray-700 hover:cursor-pointer"
           >
             Sign up
           </Link>
           <Link
-            to="/signin"
+            to="/login"
             className="rounded-md bg-black m-3 px-4 py-2 hover:bg-gray-700 hover:cursor-pointer"
           >
             Sign in
