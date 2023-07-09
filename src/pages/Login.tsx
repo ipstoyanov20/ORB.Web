@@ -1,3 +1,4 @@
+import { Form } from "react-router-dom";
 
 function Signin() {
     let userdata:any = {
@@ -20,7 +21,7 @@ function Signin() {
     
     return (
       <>
-        <div className="grid">
+        <Form className="grid">
           <input
             className="m-3"
             type="email"
@@ -33,7 +34,7 @@ function Signin() {
             onChange={onChangePassword}
             placeholder=" Enter password"
           ></input>
-        </div>
+        </Form>
 
         <button className="text-[#646cff] bg-black" onClick={submit}>
           Sign in

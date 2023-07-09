@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CreateResume = () => {
     return (
       <div className="grid shadow-2xl place-items-center grid-cols-2 absolute left-0 top-28 w-[100%] h-[50%]">
@@ -13,8 +15,9 @@ const CreateResume = () => {
             voluptas perspiciatis ab vero nostrum, officia repellendus.
             Accusantium illum doloremque saepe optio amet.
           </p>
-          <button className="bg-black text-white rounded-md hover:bg-gray-700 hover:cursor-pointer">
-            Create Resume
+
+          <button className="bg-black rounded-md hover:bg-gray-700 hover:cursor-pointer">
+            <Link className="text-white" to='/resumes'>Create Resume</Link>
           </button>
         </div>
       </div>
