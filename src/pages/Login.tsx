@@ -31,13 +31,13 @@ function Signin() {
             className="m-3 rounded text-slate-500 font-bold"
             type="email"
             onChange={onChangeUserName}
-            placeholder=" Enter username"
+            placeholder="Enter username"
           ></input>
           <input
             className="m-3 rounded text-slate-500 font-bold"
             type="password"
             onChange={onChangePassword}
-            placeholder=" Enter password"
+            placeholder="Enter password"
           ></input>
         </Form>
 
