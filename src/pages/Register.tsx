@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Signup()
 {
     let userdata:any = {
@@ -33,22 +34,24 @@ function Signup()
             className="m-3 rounded text-slate-500 font-bold"
             type="text"
             onChange={onChangeUserName}
-            placeholder=" Enter username"
+            placeholder="Enter username"
           ></input>
           <input
             className="m-3 rounded text-slate-500 font-bold"
             type="email"
             onChange={onChangeEmail}
-            placeholder=" Enter email"
+            placeholder="Enter email"
           ></input>
            <input
             className="m-3 rounded text-slate-500 font-bold"
             type="password"
             onChange={onChangePassword}
-            placeholder=" Enter password"
+            placeholder="Enter password"
           ></input>
-          <button className="m-3 text-[#646cff] bg-black hover:bg-indigo-500 hover:text-slate-950" onClick={submit}>
-          Sign up
+          <button className="m-3 text-[#646cff] bg-black hover:bg-indigo-500 hover:text-slate-950">
+          <Link to='/panel'>
+            Sign up
+          </Link>
           </button>
         </div> 
       </>

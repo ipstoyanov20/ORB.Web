@@ -1,4 +1,5 @@
 import { Form } from "react-router-dom";
+import authenticationService from "../services/authentication-service";
 
 function Signin() {
   let userdata: any = {
@@ -14,9 +15,9 @@ function Signin() {
     userdata.password = e.currentTarget.value;
   };
 
-  function submit() {
-    alert(`${userdata.username} ${userdata.password}`);
-    // api call
+  async function submit() {
+    const response = await authenticationService.makeLoginRequest(userdata.username, userdata.password);
+    alert(response.data);
   };
 
   return (
@@ -30,13 +31,13 @@ function Signin() {
             className="m-3 rounded text-slate-500 font-bold"
             type="email"
             onChange={onChangeUserName}
-            placeholder=" Enter username"
+            placeholder="Enter username"
           ></input>
           <input
             className="m-3 rounded text-slate-500 font-bold"
             type="password"
             onChange={onChangePassword}
-            placeholder=" Enter password"
+            placeholder="Enter password"
           ></input>
         </Form>
 
