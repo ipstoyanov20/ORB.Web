@@ -20,8 +20,9 @@ function Signup()
       };
     
       function submit() {
-        alert(`${userdata.username} ${userdata.email} ${userdata.password}`);
-        // api call
+        // api call for register
+        // get user info
+        window.localStorage.setItem("username", userdata.username);
       };
     
     return (
@@ -48,11 +49,10 @@ function Signup()
             onChange={onChangePassword}
             placeholder="Enter password"
           ></input>
-          <button className="m-3 text-[#646cff] bg-black hover:bg-indigo-500 hover:text-slate-950">
-          <Link to='/panel'>
-            Sign up
+          
+          <Link to='/panel' onClick={submit} className="m-3 text-[#646cff] bg-black hover:bg-indigo-500 hover:text-slate-950 p-2.5 ">
+              Sign up
           </Link>
-          </button>
         </div> 
       </>
     );
