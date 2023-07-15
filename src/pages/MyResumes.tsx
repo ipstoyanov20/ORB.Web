@@ -1,8 +1,8 @@
 export const MyResumes:React.FC = () => {
     return (
-        <div className="text-black absolute top-[50%] left-[50%]">
-            Welcome to yours resumes
-        </div>
+      <div className="text-black z-1 absolute w-[80%] h-[100%] top-0 right-0 grid place-items-center ">
+        <div className="w-[80%] h-[80%] rounded-md shadow-xl bg-gray-400"></div>
+      </div>
     );
 
 }
