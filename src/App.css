@@ -10,3 +10,7 @@
     animation: logo-spin infinite 20s linear;
   }
 }
+
+.Toastify__toast-body {
+  white-space: pre-line;
+}

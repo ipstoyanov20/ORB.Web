@@ -14,7 +14,6 @@ let userdata: any = {
 
 function Signin() {
   let navigate = useNavigate();
-  let rejected = false;
 
 
   function onChangeEmail(e: React.FormEvent<HTMLInputElement>): void {
@@ -27,7 +26,7 @@ function Signin() {
 
 
   async function submit() {
-    if (userdata.email === String("") || userdata.password === String("") || !(/\w*([A-z][0-9])*@\S/.test(userdata.email))) {
+    if (userdata.password === String("") || !(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(userdata.email))) {
       return;
     }
 
