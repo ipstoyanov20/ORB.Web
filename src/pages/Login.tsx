@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-extra-semi */
 import { Form } from "react-router-dom";
 import authenticationService from "../services/authentication-service";
+import storageService from "../services/storage-service";
+import {ResponseData } from "../services/apiTypes";
 
 function Signin() {
   let userdata: any = {
@@ -15,11 +18,24 @@ function Signin() {
     userdata.password = e.currentTarget.value;
   };
 
-  async function submit() {
+  /*async function submit() {
     const response = await authenticationService.makeLoginRequest(userdata.username, userdata.password);
     alert(response.data);
-  };
-
+    storageService.saveAccessToken(response.data.accessToken);
+    storageService.saveRefreshToken(response.data.refreshToken);
+    storageService.saveTokenExpiresDate(response.data.expiration);
+  };*/
+  async function submit() {
+    const response = await authenticationService.makeLoginRequest(userdata.username, userdata.password);
+    
+    //console.log(response.data);
+    const responseData: ResponseData = response.data as unknown as ResponseData;
+    
+   // alert(responseData.accessToken);
+    storageService.saveAccessToken(responseData.accessToken);
+    storageService.saveRefreshToken(responseData.refreshToken);
+    storageService.saveTokenExpiresDate(responseData.expiration);
+  }
   return (
     <>
       <div className="grid w-full p-10 bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
