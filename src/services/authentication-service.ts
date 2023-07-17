@@ -30,7 +30,7 @@ export class AuthenticationService extends WebApiService {
     return await this.userAuthApi.apiUserAuthRegisterPost(userIM, this.generateHeader());
   }
 
-  public async renewToken(accessToken: string, refreshToken: string): Promise<AxiosResponse<void, any>> {
+  public async renewToken(accessToken: string | null, refreshToken: string | null): Promise<AxiosResponse<void, any>> {
     const tokensIM: TokensIM = ({
         accessToken: accessToken,
         refreshToken: refreshToken,
