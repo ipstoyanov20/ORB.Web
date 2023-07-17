@@ -15,6 +15,7 @@ import { DashBoard } from "./pages/DashBoard";
 import { Info } from "./pages/Info";
 import { Templates } from "./pages/Templates";
 import { MyResumes } from "./pages/MyResumes";
+import { MyResume } from "./pages/MyResume";
 
 
 const App = createBrowserRouter(
@@ -30,6 +31,7 @@ const App = createBrowserRouter(
           <Route path='personal' element={<Info />} />
           <Route path='templates' element={<Templates />} />
           <Route path='myresumes' element={<MyResumes />} />
+          <Route path='myresume/:id' element={<MyResume />} />
         </Route>
       </Route>
     </>
