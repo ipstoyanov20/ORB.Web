@@ -1,31 +1,55 @@
-import React, {useState} from "react";
-import storageService from "../services/storage-service";
-import authenticationService from "../services/authentication-service";
+import React, {useState, useEffect} from "react";
+import userService from "../services/user-service";
 import { Form } from "react-router-dom";
-import axios from "axios";
-
-const info: { [key: string ]: string | null }[] = [
-  {"First Name": "Your information", "Last Name": "Your information"},
-  {"Email": "Your information"},
-];
-
-let accessToken: String | null = storageService.retrieveAccessToken();
-let refreshToken: String | null = storageService.retrieveRefreshToken();
+import { UserVM } from "../api";
+import { AxiosError } from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 let fNameI: HTMLInputElement | null; 
-let fNameV: string | undefined; 
+let fNameV: string | undefined | null; 
 let lNameI: HTMLInputElement | null; 
 let lNameV: string | undefined; 
 let emailI: HTMLInputElement | null; 
 let emailV: string | undefined;
-// let passwordI: HTMLInputElement | null;
-// let passwordV: string | undefined;
+
+let userData: any = {
+  fName: String,
+  lName: String,
+  email: String,
+}
+
+let updatedPersonalInfo: UserVM = {
+  firstName: String(fNameV) , 
+  lastName: String(lNameV),
+  email: String(emailV),
+};
 
 export const Info:React.FC = () => {
   let [editPersonalInfo, setPersonalInfo] = useState(false);
+  let [info, setInfo] = useState([{"First Name": fNameV, "Last Name": lNameV},
+  {"Email": emailV}]);
+  
+  useEffect(() => {
+    try {
+      (async () => {
+        const response2 = await userService.makeGetCurrentUserRequest();
+        setInfo([{"First Name": response2.data.firstName, "Last Name": response2.data.lastName},
+        {"Email": response2.data.email}])
+        
+        userData.fName = response2.data.firstName;
+        userData.lName = response2.data.lastName;
+        userData.email = response2.data.email;
+      }
+      )();
+      
+    } catch (error) {
+
+      console.log(error);
+    }
+  }, [info]);
 
   function submitForm() {
-    setPersonalInfo(false);
 
      fNameI = document.getElementById("FirstName") as HTMLInputElement | null;
      fNameV = fNameI?.value;
@@ -33,37 +57,55 @@ export const Info:React.FC = () => {
      lNameV = lNameI?.value;
      emailI = document.getElementById("Email") as HTMLInputElement | null;
      emailV = emailI?.value;
-    //  passwordI = document.getElementById("LastName") as HTMLInputElement | null;
-    //  passwordV = passwordI?.value;
 
     console.log(`fname: ${fNameV} lname: ${lNameV} email: ${emailV}`);
   }
     
-  const handlePersonalInfoSave = () => {
+  const handlePersonalInfoSave =  async () => {
     
     submitForm();
-    const updatedPersonalInfo = {
-      firstName: fNameV, 
-      lastName: lNameV,
-      email: emailV,
+    updatedPersonalInfo = {
+      firstName: String(fNameV), 
+      lastName: String(lNameV),
+      email: String(emailV),
     };
 
-    // Send the updated personal info to the API
-    axios
-      .put("https://localhost:7206/api/user", {accessToken,updatedPersonalInfo}) // Replace the URL with your API endpoint
-      .then((response) => {
-        // Handle the response from the server if needed
-        console.log("Personal info updated successfully");
-      })
-      .catch((error) => {
-        // Handle errors if any
-        console.error("Error updating personal info:", error.response.data);
-      });
+    await userService.makeUpdateUserRequest(updatedPersonalInfo.firstName, updatedPersonalInfo.lastName, updatedPersonalInfo.email).then(
+      function(response) {
 
+        toast.success(`Personal info updated successfully`, {
+          position: "bottom-center",
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
+      }
+    ).catch(function(error: AxiosError) {
+      console.log(error);
+
+      
+      toast.error(`Error occurred: ${error.response.data.errors[Object.keys(error.response?.data.errors)[0]]}`, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+    })
+
+    
     // After saving the data, set edit mode to false
     setPersonalInfo(false);
   };
 
+ 
 
   return (
     <>
@@ -72,8 +114,8 @@ export const Info:React.FC = () => {
           <div className="flex p-5 rounded-lg justify-center justify items-center content-center">
             <img className="w-20 h-20" src="../src/assets/girl.png" alt="" />
             <span className="grow">
-              <p className="ml-5 text-left text-white">Fist Name Last Name</p>
-              <p className="ml-5 text-md text-left text-gray-500">Username</p>
+              <p className="ml-5 text-left text-white">{userData.fName + " " + userData.lName}</p>
+              <p className="ml-5 text-md text-left text-gray-500">Change Avatar</p>
             </span>
           </div>
 
@@ -136,6 +178,7 @@ export const Info:React.FC = () => {
           </Form>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 

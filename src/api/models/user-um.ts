@@ -22,17 +22,17 @@ export interface UserUM {
      * @type {string}
      * @memberof UserUM
      */
-    firstName: string;
+    firstName: string | undefined;
     /**
      * 
-     * @type {string}
+     * @type {string | undefined}
      * @memberof UserUM
      */
-    lastName: string;
+    lastName: string | undefined;
     /**
      * 
-     * @type {string}
+     * @type {string | undefined}
      * @memberof UserUM
      */
-    email: string;
+    email: string | undefined;
 }
