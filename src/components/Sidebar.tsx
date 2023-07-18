@@ -1,6 +1,16 @@
 import { Link, Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import storageService from "../services/storage-service";
+
 
 function Sidebar() {
+  let navigate = useNavigate();
+  
+  const logOut = () => {
+    storageService.deleteUserData();
+    navigate("/");
+  }
+
     return (
       <>
         <div className='z-[-1] rounded-md absolute right-0 top-0 bg-gray-200 w-[80%] h-[100%]'></div>
@@ -27,11 +37,17 @@ function Sidebar() {
               Templates
             </Link>
             <Link
-              className=" rounded-b-md relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
+              className="relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
               to="/panel/myresumes"
             >
               My Resumes
             </Link>
+            <button
+              className="rounded-b-md relative p-4 text-left text-white bg-red-700 hover:bg-red-600"
+              onClick={logOut}
+            >
+              Log out
+            </button>
           </nav>
         </div>
 
