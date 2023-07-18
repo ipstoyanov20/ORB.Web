@@ -25,12 +25,12 @@ const App = createBrowserRouter(
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="resumes" element={<Resumes />} />
-        <Route path="panel" element={<Sidebar />}>
-          <Route index element={<DashBoard />} />
-          <Route path='personal' element={<Info />} />
-          <Route path='templates' element={<Templates />} />
-          <Route path='myresumes' element={<MyResumes />} />
-        </Route>
+      </Route>
+      <Route path="panel" element={<Sidebar />}>
+        <Route index element={<DashBoard />} />
+        <Route path="personal" element={<Info />} />
+        <Route path="templates" element={<Templates />} />
+        <Route path="myresumes" element={<MyResumes />} />
       </Route>
     </>
   )
