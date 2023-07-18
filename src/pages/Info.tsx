@@ -35,12 +35,9 @@ export const Info:React.FC = () => {
                         type={(key === "Password") ? "password" : (key === "Email") ? "email":"text"}
                         defaultValue={value || ""}
                         className={
-                          editPersonalInfo ? "text-black p-3 rounded-md w-[100%]" : "p-3 rounded-md text-white w-[100%]"
+                          editPersonalInfo ? "text-black p-3 rounded-md" : "p-3 rounded-md text-white bg-[#747982] w-[100%]"
                         }
                         disabled={!editPersonalInfo}
-                        style={
-                          !editPersonalInfo ? {backgroundColor : "#747982", padding: "0.75rem", color: "white"} : {backgroundColor : '#f1f1f1'}
-                        }
                       />
                     </div>
                   </React.Fragment>
@@ -55,8 +52,9 @@ export const Info:React.FC = () => {
               onClick={() => {
                 setPersonalInfo(false);
               }}
-              className="rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2"
-              style={!editPersonalInfo ? {backgroundColor : "#747982", color: "white"} : {backgroundColor : '#f1f1f1'}}
+              className={
+                (editPersonalInfo)?`bg-slate-50 rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2`:`bg-[#747982] text-white rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2`
+              }
               >
               Save
             </button>
@@ -66,9 +64,8 @@ export const Info:React.FC = () => {
                 setPersonalInfo(true);
               }}
               className={
-                (!editPersonalInfo)?`bg-slate-50 rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2`:`bg-gray-70 text-white rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2`
+                (!editPersonalInfo)?`bg-slate-50 rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2`:`bg-[#747982] text-white rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2`
               }
-              style={editPersonalInfo ? {backgroundColor : "#747982"} : {backgroundColor : '#f1f1f1'}}
             >
               Edit
             </button>
