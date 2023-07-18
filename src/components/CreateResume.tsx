@@ -16,9 +16,7 @@ const CreateResume = () => {
             Accusantium illum doloremque saepe optio amet.
           </p>
 
-          <button className="bg-black rounded-md hover:bg-gray-700 hover:cursor-pointer">
-            <Link className="text-white" to='/resumes'>Create Resume</Link>
-          </button>
+         
         </div>
       </div>
     );
