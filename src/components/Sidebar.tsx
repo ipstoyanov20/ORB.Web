@@ -3,9 +3,9 @@ import { Link, Outlet } from 'react-router-dom';
 function Sidebar() {
     return (
       <>
-        <div className='z-[-1] rounded-md absolute right-0 top-0 bg-gray-200 w-[80%] h-[100%]'></div>
+        <div className='z-[-1] absolute right-0 top-0 bg-gray-200 w-[80%] h-[100%]'></div>
 
-        <div className="grid place-content-start shadow-2xl absolute left-0 top-0 p-5 w-[20%] h-[100%] rounded-md bg-gradient-to-br from-gray-200 to-gray-500">
+        <div className="grid place-content-start shadow-2xl fixed left-0 top-0 p-5 w-[20%] h-[100%] bg-gradient-to-br from-gray-200 to-gray-500">
          
           <nav className="grid place-content-center grid-rows-4">
             <Link
