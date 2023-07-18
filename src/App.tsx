@@ -13,7 +13,8 @@ import { Resumes } from "./pages/CreateResumesPage";
 import Sidebar from "./components/Sidebar";
 import { DashBoard } from "./pages/DashBoard";
 import { Info } from "./pages/Info";
-import { Templates } from "./pages/Templates";
+import { Template0 } from "./pages/Template0";
+import { Template1 } from "./pages/Template1";
 import { MyResumes } from "./pages/MyResumes";
 
 
@@ -28,7 +29,8 @@ const App = createBrowserRouter(
         <Route path="panel" element={<Sidebar />}>
           <Route index element={<DashBoard />} />
           <Route path='personal' element={<Info />} />
-          <Route path='templates' element={<Templates />} />
+          <Route path='template0' element={<Template0 />} />
+          <Route path='template1' element={<Template1 />} />
           <Route path='myresumes' element={<MyResumes />} />
         </Route>
       </Route>
