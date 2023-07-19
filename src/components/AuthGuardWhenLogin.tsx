@@ -1,9 +1,9 @@
 import { Outlet, Navigate } from "react-router-dom";
 import storageService from "../services/storage-service";
 
-const AuthGuard = () => {
+const AuthGuardWhenLogin = () => {
     return (
         storageService.retrieveAccessToken() ? <Outlet/> : <Navigate to="/login"/>
     );
 };
-export default AuthGuard;
+export default AuthGuardWhenLogin;

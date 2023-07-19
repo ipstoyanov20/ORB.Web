@@ -15,20 +15,24 @@ import { DashBoard } from "./pages/DashBoard";
 import { Info } from "./pages/Info";
 import { Templates } from "./pages/Templates";
 import { MyResumes } from "./pages/MyResumes";
-import AuthGuard from "./components/AuthGuard";
+import AuthGuardWhenLogin from "./components/AuthGuardWhenLogin";
+import AuthGuardWhenLogout from "./components/AuthGuardWhenLogout";
+
 
 
 
 const App = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<NavMenu />}>
-        <Route index element={<Home />} />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
-        <Route path="resumes" element={<Resumes />} />
+      <Route element={<AuthGuardWhenLogout />}>
+        <Route path="/" element={<NavMenu />}>
+          <Route index element={<Home />} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+          <Route path="resumes" element={<Resumes />} />
+        </Route>
       </Route>
-      <Route element={<AuthGuard/>}>
+      <Route element={<AuthGuardWhenLogin />}>
         <Route path="panel" element={<Sidebar />}>
           <Route index element={<DashBoard />} />
           <Route path="personal" element={<Info />} />
