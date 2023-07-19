@@ -15,6 +15,8 @@ import { DashBoard } from "./pages/DashBoard";
 import { Info } from "./pages/Info";
 import { Templates } from "./pages/Templates";
 import { MyResumes } from "./pages/MyResumes";
+import AuthGuard from "./components/AuthGuard";
+
 
 
 const App = createBrowserRouter(
@@ -26,11 +28,13 @@ const App = createBrowserRouter(
         <Route path="login" element={<Login />} />
         <Route path="resumes" element={<Resumes />} />
       </Route>
-      <Route path="panel" element={<Sidebar />}>
-        <Route index element={<DashBoard />} />
-        <Route path="personal" element={<Info />} />
-        <Route path="templates" element={<Templates />} />
-        <Route path="myresumes" element={<MyResumes />} />
+      <Route element={<AuthGuard/>}>
+        <Route path="panel" element={<Sidebar />}>
+          <Route index element={<DashBoard />} />
+          <Route path="personal" element={<Info />} />
+          <Route path="templates" element={<Templates />} />
+          <Route path="myresumes" element={<MyResumes />} />
+        </Route>
       </Route>
     </>
   )
