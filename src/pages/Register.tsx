@@ -14,7 +14,6 @@ let userdata:any = {
 function Signup()
 {
   let navigate = useNavigate();
-
     
   function onChangeEmail(e: React.FormEvent<HTMLInputElement>):void {
     userdata.email = e.currentTarget.value;
@@ -85,6 +84,20 @@ function Signup()
         progress: undefined,
         theme: "dark",
       });
+      return;
+    }
+    else if (userdata.password.length < 6) {
+      toast.error(`Verification error: Password must be at least 6 characters long!`, {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      return;
     }
 
     await authenticationService.makeRegisterRequest(userdata.firstName, userdata.lastName, userdata.email, userdata.password).then(function ()
@@ -148,7 +161,7 @@ function Signup()
           >
           </input>
         
-          <button type="submit" onClick={submit} className="m-3 text-[#646cff] bg-black hover:bg-indigo-500 hover:text-slate-950 p-2.5 ">
+          <button id="submit" type="submit" onClick={submit} className="m-3 text-[#646cff] bg-black hover:bg-indigo-500 hover:text-slate-950 p-2.5 ">
             Sign up
           </button>
         </Form>
@@ -158,4 +171,9 @@ function Signup()
     </>
   );
 }
+
+document.getElementById("submit")?.addEventListener("click", function(event) {
+  event.preventDefault();
+})
+
 export default Signup;

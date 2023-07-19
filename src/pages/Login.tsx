@@ -78,7 +78,7 @@ function Signin() {
             placeholder="Enter password"
             required
           ></input>
-          <button type="submit" className="m-3 text-[#646cff] bg-black hover:bg-indigo-500 hover:text-slate-950" onClick={submit}>
+          <button id="submit" type="submit" className="m-3 text-[#646cff] bg-black hover:bg-indigo-500 hover:text-slate-950" onClick={submit}>
             Sign in to your account
           </button>
         </Form>
@@ -88,4 +88,9 @@ function Signin() {
     </>
   );
 }
+
+document.getElementById("submit")?.addEventListener("click", function(event) {
+  event.preventDefault();
+})
+
 export default Signin;
