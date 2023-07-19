@@ -14,25 +14,37 @@
 /**
  * 
  * @export
- * @interface UserUM
+ * @interface WorkExperienceUM
  */
-export interface UserUM {
+export interface WorkExperienceUM {
     /**
      * 
      * @type {string}
-     * @memberof UserUM
+     * @memberof WorkExperienceUM
      */
-    firstName: string;
+    companyName: string;
     /**
      * 
      * @type {string}
-     * @memberof UserUM
+     * @memberof WorkExperienceUM
      */
-    lastName: string;
+    position: string;
     /**
      * 
      * @type {string}
-     * @memberof UserUM
+     * @memberof WorkExperienceUM
      */
-    email: string;
+    description: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WorkExperienceUM
+     */
+    startDate: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof WorkExperienceUM
+     */
+    endDate?: string | null;
 }

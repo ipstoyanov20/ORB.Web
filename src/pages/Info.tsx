@@ -47,7 +47,7 @@ export const Info:React.FC = () => {
 
       console.log(error);
     }
-  }, [info]);
+  }, []);
 
   function submitForm() {
 
@@ -72,6 +72,9 @@ export const Info:React.FC = () => {
 
     await userService.makeUpdateUserRequest(updatedPersonalInfo.firstName, updatedPersonalInfo.lastName, updatedPersonalInfo.email).then(
       function(response) {
+        userData.fName = updatedPersonalInfo.firstName;
+        userData.lName = updatedPersonalInfo.lastName;
+        userData.email = updatedPersonalInfo.email;
 
         toast.success(`Personal info updated successfully`, {
           position: "bottom-center",

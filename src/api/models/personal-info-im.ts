@@ -14,25 +14,37 @@
 /**
  * 
  * @export
- * @interface UserUM
+ * @interface PersonalInfoIM
  */
-export interface UserUM {
+export interface PersonalInfoIM {
     /**
      * 
      * @type {string}
-     * @memberof UserUM
+     * @memberof PersonalInfoIM
      */
-    firstName: string;
+    fullName?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof UserUM
+     * @memberof PersonalInfoIM
      */
-    lastName: string;
+    address?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof UserUM
+     * @memberof PersonalInfoIM
      */
-    email: string;
+    phoneNumber?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof PersonalInfoIM
+     */
+    email?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof PersonalInfoIM
+     */
+    summary?: string | null;
 }
