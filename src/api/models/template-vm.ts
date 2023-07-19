@@ -14,25 +14,25 @@
 /**
  * 
  * @export
- * @interface UserUM
+ * @interface TemplateVM
  */
-export interface UserUM {
+export interface TemplateVM {
     /**
      * 
      * @type {string}
-     * @memberof UserUM
+     * @memberof TemplateVM
      */
-    firstName: string;
+    id?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof UserUM
+     * @memberof TemplateVM
      */
-    lastName: string;
+    name?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof UserUM
+     * @memberof TemplateVM
      */
-    email: string;
+    content?: string | null;
 }
