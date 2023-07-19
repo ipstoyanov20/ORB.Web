@@ -38,7 +38,7 @@ function Signin() {
       storageService.saveRefreshToken(responseData.refreshToken);
       storageService.saveTokenExpiresDate(responseData.expiration);
 
-      navigate("/panel")
+      navigate("/panel/dashboard")
 
 
     }).catch(function(error) {

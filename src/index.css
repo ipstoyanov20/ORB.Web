@@ -12,6 +12,10 @@ a:hover {
   color: white;
 }
 
+a.active {
+  background-color: #4b5563;
+}
+
 body {
   margin: 0;
   display: grid;
