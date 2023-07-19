@@ -29,7 +29,6 @@ const App = createBrowserRouter(
           <Route index element={<Home />} />
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
-          <Route path="resumes" element={<Resumes />} />
         </Route>
       </Route>
       <Route element={<AuthGuardWhenLogin />}>
@@ -38,6 +37,7 @@ const App = createBrowserRouter(
           <Route path="personal" element={<Info />} />
           <Route path="templates" element={<Templates />} />
           <Route path="myresumes" element={<MyResumes />} />
+          <Route path="resumes" element={<Resumes />} />
         </Route>
       </Route>
     </>

@@ -1,9 +1,9 @@
 import { Form } from "react-router-dom";
 export const Resumes = () => {
     return (
-      <div className="grid place-items-center translate-y-[-100px] p-5">
-        <h1 className="text-black pt-10">Create Resumes</h1>
-        <Form method="post" className="w-[140%] h-[50%]">
+      <div className="rounded-md absolute right-0 top-0 bg-gray-200 w-[80%] h-[100%]">
+        <h1 className="text-black text-xl p-5 pb-0 mt-20 text-left">Your Personal info</h1>
+        <Form method="post" className=" pt-0 p-5 w-[45%] h-[50%]">
           <div className="grid grid-rows-4 gap-y-1 rounded-md bg-slate-950 p-5 mt-5 ">
             <label className="text-left" htmlFor="fname">
               First name
@@ -41,11 +41,21 @@ export const Resumes = () => {
             <input type="text" name="city" id="city" />
           </div>
 
-          <button className="bg-black rounded-md hover:bg-gray-700 hover:cursor-pointer m-5" disabled>
+          <button className="bg-black text-white rounded-md hover:bg-gray-700 hover:cursor-pointer m-5" disabled>
             Create
           </button>
 
         </Form>
+        
+        {/* Implement real time rendering */}
+
+
+
+
+
+
+
+
       </div>
     );
 

@@ -11,7 +11,7 @@ export const MyResumes:React.FC = () => {
           <hr className="bg-gray-500 w-[20%] h-1 group-hover:w-[100%] transition-all duration-500" />
 
           <button className="bg-gary-500 z-20 absolute right-0 p-2 m-4 rounded-sm hover:bg-gray-700">
-            <Link className="text-white " to="/resumes">
+            <Link className="text-white " to="/panel/resumes">
               Create Resume
             </Link>
           </button>
