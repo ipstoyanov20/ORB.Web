@@ -117,14 +117,14 @@ export const Info:React.FC = () => {
           <div className="flex p-5 rounded-lg justify-center justify items-center content-center">
             <img className="w-20 h-20" src="../src/assets/girl.png" alt="" />
             <span className="grow">
-              <p className="ml-5 text-left text-white">{userData.fName + " " + userData.lName}</p>
+              <p className="ml-5 text-left text-white">{`Welcome ${userData.fName} ${userData.lName}`}</p>
               <p className="ml-5 text-md text-left text-gray-500">Change Avatar</p>
             </span>
           </div>
 
           <Form className="ml-5">
             {info.map((infoItem, index) => (
-              <div key={index} className="grid grid-cols-2 place-items-start">
+              <div key={index} className="grid grid-cols-2 gap-3 place-items-start">
                 {Object.entries(infoItem).map(([key, value]) => (
                   <React.Fragment key={key}>
                     <div key={key} className="flex flex-col">

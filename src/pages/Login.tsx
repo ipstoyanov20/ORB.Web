@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-extra-semi */
-import { Form } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import authenticationService from "../services/authentication-service";
 import storageService from "../services/storage-service";
 import {ResponseData } from "../services/apiTypes";
@@ -59,7 +59,7 @@ function Signin() {
 
   return (
     <>
-      <div className="grid w-full p-10 bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
+      <div className="grid w-full p-10 rounded-lg shadow bg-gray-500">
         <h1 className="mb-5 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
           Sign in
         </h1>
@@ -78,9 +78,12 @@ function Signin() {
             placeholder="Enter password"
             required
           ></input>
-          <button id="submit" type="submit" className="m-3 text-[#646cff] bg-black hover:bg-indigo-500 hover:text-slate-950" onClick={submit}>
-            Sign in to your account
+          <button id="submit" type="submit" className="m-3 duration-75 transition-all rounded-sm text-black bg-gray-300 hover:bg-gray-400" onClick={submit}>
+            Sign in
           </button>
+          <Link to='/register' className="text-gray-300 text-sm hover:text-gray-400">
+            Don't have an account? Sign up
+          </Link>
         </Form>
 
         <ToastContainer />

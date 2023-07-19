@@ -8,9 +8,6 @@ a {
   text-decoration: inherit;
   size: 0.35rem;
 }
-a:hover {
-  color: white;
-}
 
 body {
   margin: 0;
@@ -19,8 +16,10 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-input{
-  padding: 5px 10px;
+input, t:active, t:focus, t:hover{
+  color: #1a1a1a;
+  border: none !important;
+  box-shadow: none !important;
 }
 h1 {
   font-size: 3.2em;
@@ -28,7 +27,6 @@ h1 {
 }
 
 button {
-  border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -42,9 +40,6 @@ button {
   :root {
     color: #213547;
     background-color: #ffffff;
-  }
-  a:hover {
-    color: #0a192f;
   }
   button {
     background-color: #f9f9f9;

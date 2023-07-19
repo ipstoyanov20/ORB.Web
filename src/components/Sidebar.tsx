@@ -19,31 +19,31 @@ function Sidebar() {
          
           <nav className="grid place-content-center grid-rows-4">
             <Link
-              className=" rounded-t-md relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
+              className=" rounded-t-md relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
               to="/panel"
             >
               Dashboard
             </Link>
             <Link
-              className=" relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
-              to="/panel/personal"
+              className=" font-bold relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
+              to="/panel/settings"
             >
-              Personal Info
+              Account Settings
             </Link>
             <Link
-              className=" relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
+              className=" font-bold relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
               to="/panel/templates"
             >
               Templates
             </Link>
             <Link
-              className="relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
+              className="font-bold relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
               to="/panel/myresumes"
             >
               My Resumes
             </Link>
             <button
-              className="rounded-b-md relative p-4 text-left text-white bg-red-700 hover:bg-red-600"
+              className="rounded-b-md relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
               onClick={logOut}
             >
               Log out
