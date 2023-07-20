@@ -25,16 +25,18 @@ const App = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route element={<AuthGuardWhenLogout />}>
-        <Route path="/" element={<NavMenu />}>
+        <Route path="/">
           <Route index element={<Home />} />
-          <Route path="register" element={<Register />} />
-          <Route path="login" element={<Login />} />
+          <Route element={<NavMenu />}>
+            <Route path="register" element={<Register />} />
+            <Route path="login" element={<Login />} />
+          </Route>
         </Route>
       </Route>
       <Route element={<AuthGuardWhenLogin />}>
         <Route path="panel" element={<Sidebar />}>
-          <Route path="dashboard" element={<DashBoard />} />
-          <Route path="personal" element={<Info />} />
+          <Route index element={<DashBoard />} />
+          <Route path="settings" element={<Info />} />
           <Route path="templates" element={<Templates />} />
           <Route path="myresumes" element={<MyResumes />} />
           <Route path="resumes" element={<Resumes />} />

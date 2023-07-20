@@ -3,25 +3,13 @@ function NavMenu() {
     return (
       <>
        
-        <div className="grid grid-cols-3 z-30 absolute top-0 right-0 p-3">
-          <NavLink
+        <div className="z-30 absolute top-0 left-0 p-10">
+          <Link
             to="/"
-            className="rounded-md bg-gray-700 m-3 px-4 py-2 hover:bg-gray-600 hover:cursor-pointer"
+            className=" relative before:bg-[url('../src/assets/left.png')] pl-12 before:absolute before:left-0 before:top-0 before:w-10 before:h-10 before:bg-no-repeat before:bg-contain text-black transition-all duration-75 hover:border-b-4 hover:border-b-gray-600 m-3 px-4 py-2 hover:cursor-pointer"
           >
-            Home
-          </NavLink>
-          <NavLink
-            to="/register"
-            className="rounded-md bg-gray-700 m-3 px-4 py-2 hover:bg-gray-600 hover:cursor-pointer"
-          >
-            Sign up
-          </NavLink>
-          <NavLink
-            to="/login"
-            className="rounded-md bg-gray-700 m-3 px-4 py-2 hover:bg-gray-600 hover:cursor-pointer"
-          >
-            Sign in
-          </NavLink>
+            Home page
+          </Link>
         </div>
 
         <Outlet />

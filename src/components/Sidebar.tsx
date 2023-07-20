@@ -18,32 +18,32 @@ function Sidebar() {
         <div className="grid place-content-start shadow-2xl absolute left-0 top-0 p-5 w-[20%] h-[100%] rounded-md bg-gradient-to-br from-gray-200 to-gray-500">
          
           <nav className="grid place-content-center grid-rows-4">
-            <NavLink
-              className=" rounded-t-md relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
-              to="/panel/dashboard"
+            <Link
+              className=" rounded-t-md relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
+              to="/panel"
             >
               Dashboard
-            </NavLink>
-            <NavLink
-              className=" relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
-              to="/panel/personal"
+            </Link>
+            <Link
+              className=" font-bold relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
+              to="/panel/settings"
             >
-              Personal Info
-            </NavLink>
-            <NavLink
-              className=" relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
+              Account Settings
+            </Link>
+            <Link
+              className=" font-bold relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
               to="/panel/templates"
             >
               Templates
-            </NavLink>
-            <NavLink
-              className="relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
+            </Link>
+            <Link
+              className="font-bold relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
               to="/panel/myresumes"
             >
               My Resumes
             </NavLink>
             <button
-              className="rounded-b-md relative p-4 text-left text-white bg-red-700 hover:bg-red-600"
+              className="rounded-b-md relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
               onClick={logOut}
             >
               Log out
