@@ -121,13 +121,13 @@ function Signup()
   
   return (
     <>
-      <div className="grid w-full p-10  rounded-lg shadow bg-gray-500">
+      <div className="grid w-full p-10 bg-gray-500 rounded-lg shadow">
         <h1 className="mb-5 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
             Sign up
         </h1>
         <Form className="grid">
           <input
-            className="m-3 rounded text-slate-500 font-bold"
+            className="m-3 font-bold rounded text-slate-500"
             type="text"
             onChange={onChangeFirstName}
             placeholder="Enter first name"
@@ -135,7 +135,7 @@ function Signup()
           >
           </input>
 
-          <input className="m-3 rounded text-slate-500 font-bold"
+          <input className="m-3 font-bold rounded text-slate-500"
             type="text"
             onChange={onChangeLastName}
             placeholder="Enter last name"
@@ -144,7 +144,7 @@ function Signup()
           </input>
 
           <input
-            className="m-3 rounded text-slate-500 font-bold"
+            className="m-3 font-bold rounded text-slate-500"
             type="email"
             onChange={onChangeEmail}
             placeholder="Enter email"
@@ -153,7 +153,7 @@ function Signup()
           </input>
 
           <input
-            className="m-3 rounded text-slate-500 font-bold"
+            className="m-3 font-bold rounded text-slate-500"
             type="password"
             onChange={onChangePassword}
             placeholder="Enter password"
@@ -161,11 +161,11 @@ function Signup()
           >
           </input>
         
-          <button id="submit" type="submit" onClick={submit} className="m-3 duration-75 transition-all rounded-sm text-black bg-gray-300 hover:bg-gray-400 ">
+          <button id="submit" type="submit" onClick={submit} className="m-3 text-black transition-all duration-150 rounded-sm hover:bg-slate-300 bg-slate-50 ">
             Sign up
           </button>
 
-          <Link to='/login' className="text-gray-300 text-sm hover:text-gray-400">
+          <Link to='/login' className="text-sm text-gray-300 hover:text-gray-400">
             Already have an account? Sign in
           </Link>
         </Form>

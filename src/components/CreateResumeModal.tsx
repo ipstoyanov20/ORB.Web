@@ -76,28 +76,56 @@ function CreateResumeModal({onCloseModal, onCreateResume}:{onCloseModal:() => vo
 
     return (
       <>
-        <h1 className="text-xl text-bold">Create Resume</h1>
-        <h2>Enter title:</h2>
-        {/* tva ne e li mn tumno */}
-        <input className="rounded bg-gray-100" type="text" placeholder="Example title" onChange={(e) => setTitle(e.target.value)}/>
-        <h2>Choose template:</h2>
-        {templates.map((template, index) => {
+        <div className="p-5">
+          <h1 className="mb-5 text-xl text-bold">Create Resume</h1>
+          <h2>Enter title:</h2>
+          <input
+            className="mb-5 bg-gray-100 rounded"
+            type="text"
+            placeholder="Example title"
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <h2>Choose template:</h2>
+          {templates.map((template, index) => {
             return (
-                <div key={template.id}>
-                    <input
-                        type="radio"
-                        name="template"
-                        value={template.id || ""}
-                        defaultChecked={index === 0}
-                        onClick={() => setTemplateId(template.id || "")}
-                    />
-                    <label>{template.name}</label>
+              <>
+                <div key={template.id} className="py-2">
+                  <input
+                    type="radio"
+                    name="template"
+                    value={template.id || ""}
+                    defaultChecked={index === 0}
+                    onClick={() => setTemplateId(template.id || "")}
+                  />
+                  <label>{template.name}</label>
                 </div>
+                <div key={template.id} className="py-2">
+                  <input
+                    type="radio"
+                    name="template"
+                    value={template.id || ""}
+                    defaultChecked={index === 0}
+                    onClick={() => setTemplateId(template.id || "")}
+                  />
+                  <label>{template.name}</label>
+                </div>
+              </>
             );
-        })}
-        <div className="flex ">
-          <button onClick={createResume}>Create</button>
-          <button onClick={onCloseModal}>Cancel</button>
+          })}
+          <div className="flex pt-5">
+            <button
+              className="rounded p-2.5 mx-6 text-white hover:text-green-400 transition-all duration-150 hover:bg-gray-600 bg-gray-500"
+              onClick={createResume}
+            >
+              Create
+            </button>
+            <button
+              className="p-2.5 text-white rounded hover:text-red-400 transition-all duration-150 hover:bg-gray-600 bg-gray-500 "
+              onClick={onCloseModal}
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </>
     );

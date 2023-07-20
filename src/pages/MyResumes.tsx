@@ -36,14 +36,12 @@ export const MyResumes: React.FC = () => {
   }, []);
 
   const refreshResumes = async () => {
-    console.log("onResumeDeleted");
     try {
       (async () => {
         const response =
           (await resumesService.makeGetResumesRequest()) as AxiosResponse<
             ResumeVM[]
           >;
-        console.log(response.data);
 
         response.data.sort((a, b) => {
           return Date.parse(b.lastModified) - Date.parse(a.lastModified);
@@ -55,7 +53,6 @@ export const MyResumes: React.FC = () => {
     } catch (error) {
       console.log(error);
     }
-    console.log("onResumeDeleted end");
   };
 
   return (
@@ -80,14 +77,14 @@ export const MyResumes: React.FC = () => {
       >
         <CreateResumeModal onCloseModal={() => setIsOpen(!isOpen)} onCreateResume={refreshResumes}/>
       </ReactModal>
-      <div className="text-black z-1 absolute w-[80%] h-[100%] top-0 right-0 grid place-items-center ">
+      <div className="text-black z-1 absolute w-[90%] h-[100%] top-0 right-0 grid place-items-center ">
         <div className="w-[80%] h-[50%] group z-10 relative rounded-md shadow-xl bg-[#ffffff]">
           <h1 className="font-bold p-5 text-2xl text-left text-gray-500 absolute top-[-15%] left-0">
             My Resumes
           </h1>
           <hr className="bg-gray-500 w-[20%] h-1 group-hover:w-[100%] transition-all duration-500" />
 
-          <button className="bg-gray-600 z-20 absolute right-0 p-2 m-4 rounded hover:bg-gray-700">
+          <button className="absolute right-0 z-20 p-2 m-4 bg-gray-600 rounded hover:bg-gray-700">
             <div className="text-white " onClick={() => setIsOpen(!isOpen)}>
               Create Resume
             </div>
@@ -95,10 +92,10 @@ export const MyResumes: React.FC = () => {
 
           <div className="absolute w-[100%] h-[100%] grid place-items-center">
             <div
-              className={`w-[90%] h-[60%] bg-gray-100 place-self-center grid-rows-${resumeRows} rounded-md`}
+              className={`w-[90%] h-[60%] bg-gray-100 place-self-center grid-rows-${resumeRows} rounded-md overflow-y-scroll p-5`}
             >
-              <table className="bg-gray-100 text-left table-fixed w-[100%] h-[100%] ">
-                <tbody>
+              <table className="bg-gray-100 text-left relative table-fixed w-[100%]">
+                <tbody >
                   {resumes.map((resume) => (
                     <>
                       <ResumeElement

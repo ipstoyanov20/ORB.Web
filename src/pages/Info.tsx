@@ -63,7 +63,7 @@ export const Info:React.FC = () => {
   }
     
   const handlePersonalInfoSave =  async () => {
-    
+
     submitForm();
     updatedPersonalInfo = {
       firstName: String(fNameV), 
@@ -89,9 +89,6 @@ export const Info:React.FC = () => {
           });
       }
     ).catch(function(error: AxiosError) {
-      console.log(error);
-
-      
       toast.error(`Error occurred: ${error.response.data.errors[Object.keys(error.response?.data.errors)[0]]}`, {
         position: "bottom-center",
         autoClose: 5000,
@@ -113,9 +110,9 @@ export const Info:React.FC = () => {
 
   return (
     <>
-      <div className="text-black z-1 absolute w-[80%] h-[100%] top-0 right-0 grid place-items-center ">
+      <div className="z-1 text-black absolute w-[100%] h-[100%] top-0 right-0 grid place-items-center ">
         <div className="w-[40%] h-[50%] absolute top-30 rounded-md shadow-xl bg-gray-400">
-          <div className="flex p-5 rounded-lg justify-center justify items-center content-center">
+          <div className="flex items-center content-center justify-center p-5 rounded-lg justify">
             <img className="w-20 h-20 rounded-md" src={`https://api.dicebear.com/6.x/initials/svg?seed=${userData.fName[0]+userData.lName[0]+userData.id}`} alt="" />
             <span className="grow">
               <p className="ml-5 text-left text-white">{`${userData.fName} ${userData.lName}`}</p>
@@ -157,10 +154,11 @@ export const Info:React.FC = () => {
                 onClick={handlePersonalInfoSave}
                 className={
                   editPersonalInfo
-                    ? `bg-slate-50 rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2`
+                    ? `bg-slate-50 rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2 hover:bg-slate-300 transition-all duration-150`
                     : `bg-[#747982] text-white rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2`
                 }
                 id="save"
+                disabled={!editPersonalInfo}
               >
                 Save
               </button>
@@ -171,9 +169,10 @@ export const Info:React.FC = () => {
                 }}
                 className={
                   !editPersonalInfo
-                    ? `bg-slate-50 rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2`
+                    ? `bg-slate-50 rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2 hover:bg-slate-300 transition-all duration-150`
                     : `bg-[#747982] text-white rounded-lg grid place-content-center shadow-xl text-[80%] w-[10%] h-[10%] ml-2`
                 }
+                disabled={editPersonalInfo}
               >
                 Edit
               </button>

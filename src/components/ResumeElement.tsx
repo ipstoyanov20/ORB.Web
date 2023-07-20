@@ -42,8 +42,8 @@ function ResumeElement({resume, onResumeDelete}:{resume: ResumeVM, onResumeDelet
     }
 
     return (
-        <tr>
-            <td className="p-2">{resume.title}</td>
+        <tr className="transition-all duration-150 bg-gray-300 rounded-md hover:bg-gray-400 hover:text-white">
+            <td className="p-5">{resume.title}</td>
             {(resume.lastModified == resume.creationTime) ? (
                 <td>Created {relativeTime}</td>
             ) : (
@@ -51,8 +51,8 @@ function ResumeElement({resume, onResumeDelete}:{resume: ResumeVM, onResumeDelet
             )}
         
 
-            <td className="flex justify-end rounded-md h-[90%] w-[90%]">
-                <button onClick={deleteResume} className="border-gray-700 hover:bg-red-700 hover:text-white rounded text-black ">Delete</button>
+            <td className="flex justify-end mt-2.5 rounded-md h-[100%] w-[90%]">
+                <button onClick={deleteResume} className="text-black transition-all duration-150 bg-gray-100 border-gray-700 rounded hover:bg-red-700 hover:text-white">Delete</button>
             </td>
         </tr>
     )
