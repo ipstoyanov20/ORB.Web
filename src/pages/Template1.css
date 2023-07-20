@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Ysabeau+SC:wght@300&display=swap');
+
+.resume1>* {
+	font-family: Arial, sans-serif;
+	background-color: #F5F5F5;
+	color: #ffffff;
+	margin: 0;
+	padding: 20px;
+}
+
+.resume1-all-container {
+    display: flex;
+    flex-direction: row;
+	margin: 0;
+}
+
+.resume1-container {
+    min-width: 600px;
+    max-width: 700px;
+	height: 1000px;
+    background: #fff;
+    margin: 0px auto 0px; 
+    box-shadow: 1px 1px 2px #DAD7D7;
+    border-radius: 3px;  
+    padding: 40px;
+    margin-top: 50px;
+}
+
+.resume1-left-button-container {
+	width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+	padding-right: 0;
+	margin: 0;
+}
+
+.resume1-right-button-container {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20%;
+	margin: 0;
+}
+
+@media screen and (max-width: 1186px) {
+	.resume1-container {
+		flex-direction: column;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.col {
+		display: block;
+		width: 100%;
+	}
+}
+
+.resume1 .strip1 {
+	width:100%;
+	height: 100%;
+	border-style: solid;
+	border-color: #ffffff;
+	background-color: #ffffff;
+}
+
+.resume1 .strip2 {
+	width: 100%;
+	height: 60px;
+	border-style: solid;
+	background-color: #ffffff;
+}
+
+.resume1 .lower-side {
+	background-color: #ACBCFF;
+	flex-basis: 60%;
+	padding: 10px;
+}
+
+.resume1 .photo {
+	width: 150px;
+	height: 150px;
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.resume1 .about-me {
+	display: grid;
+	background-color: #68c1a4;
+
+}
+
+.resume1 .text-green {
+	color: #68c1a4;
+}
+
+.resume1 .text-blue {
+	color: #ACBCFF;
+}
+
+.resume1 p {
+	margin-bottom: 5px;
+	font-family: 'Ysabeau SC', sans-serif;
+}
+
+.resume1 .section-title {
+	font-size: 37px;
+	font-weight: 700;
+	line-height: 1.5;
+	margin-top: 10px;
+	font-family: 'Josefin Slab', serif;
+}
+
+.resume1 .section-content {
+	text-align: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

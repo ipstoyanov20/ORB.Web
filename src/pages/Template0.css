@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Kaushan+Script&display=swap');
+
+.resume0 > *{
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+    color: #A1CCD1;
+    margin: 0;
+    padding: 20px;
+}
+
+.resume0-all-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.resume0-left-button-container {
+	width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+	padding-right: 0;
+	margin: 0;
+}
+
+.resume0-right-button-container {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20%;
+	margin: 0;
+}
+
+.resume0 .rounded-button {
+    border-radius: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+.resume0-container {
+    min-width: 600px;
+    max-width: 700px;
+    height: 1000px;
+    background: #fff;
+    margin: 0px auto 0px; 
+    box-shadow: 1px 1px 2px #DAD7D7;
+    border-radius: 3px;  
+    padding: 40px;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 1186px) {
+    .resume0-container {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.resume0 .dark-side {
+    background-color: #A1CCD1;
+    color: #F4F2DE;
+    flex-basis: 40%;
+    padding: 20px;
+}
+
+.resume0 .light-side {
+    background-color: #F4F2DE;
+    flex-basis: 60%;
+    padding: 10px;
+}
+
+.resume0 .image-container
+{
+    text-align: center;
+}
+
+.resume0 .photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+}
+
+.resume0 h1 {
+    color: #F4F2DE;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 10px;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.resume0 .text-dark {
+    color: #A1CCD1;
+}
+
+.resume0 .span-dark {
+    background-color: #A1CCD1;
+    border-radius: 25px;
+  }
+  
+.resume0 .span-light {
+    background-color: #F4F2DE;
+    border-radius: 25px;
+  }
+
+.resume0 p {
+    margin-bottom: 5px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.resume0 .section-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.resume0 .section-content {
+    margin-left: 20px;
+}
+

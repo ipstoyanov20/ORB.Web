@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Signika:wght@300&display=swap');
+
+.resume2 > *{
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+    color: #000000;
+    margin: 0;
+    padding: 20px;
+}
+
+.resume2-all-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.resume2-left-button-container {
+	width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+	padding-right: 0;
+	margin: 0;
+}
+
+.resume2-right-button-container {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20%;
+	margin: 0;
+}
+
+.resume2-container {
+    min-width: 600px;
+    max-width: 700px;
+    height: 1000px;
+    background: #fff;
+    margin: 0px auto 0px; 
+    box-shadow: 1px 1px 2px #DAD7D7;
+    border-radius: 3px;  
+    padding: 40px;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 1186px) {
+    .resume2-container {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.resume2 .header {
+    margin-bottom: 30px;
+}
+
+.separator {
+    height: 10px;
+    display: inline-block;
+    border-left: 2px solid #999;
+    margin: 0px 10px;
+  }
+
+.resume2 .image-container
+{
+    text-align: center;
+}
+
+.resume2 .photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+}
+
+.resume2 h1 {
+    color: #6554AF;
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 10px;
+    font-family: 'Amatic SC', cursive;
+}
+
+.resume2 p {
+    color:#000000;
+    margin-bottom: 5px;
+    font-family: 'Signika', sans-serif;
+}
+
+.resume2 span {
+    color:#000000;
+    margin-bottom: 5px;
+    font-family: 'Signika', sans-serif;
+}
+
+.resume2 .text-purple {
+    color: #9575DE;
+}
+
+.resume2 .text-underlined {
+    text-decoration: underline;
+}
+
+.resume2 .section-title {
+    color:#6554AF;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 30px;
+    text-align: left;
+}
+
+.resume2 .section-content {
+    margin-left: 20px;
+    text-align: left;
+}

@@ -13,9 +13,9 @@ function Sidebar() {
 
     return (
       <>
-        <div className='z-[-1] rounded-md absolute right-0 top-0 bg-gray-7500 w-[100%] min-h-[100%] h-fit'></div> 
+        <div className='z-[-1] fixed right-0 top-0 bg-gray-200 w-[100%] h-[100%]'></div>
 
-        <div className="z-50 grid place-content-start shadow-2xl absolute left-0 top-0 p-5 h-screen rounded-md bg-gradient-to-br from-red-200 to-gray-500">
+        <div className="grid place-content-start shadow-2xl fixed left-0 top-0 p-5 w-[20%] h-[100%] bg-gradient-to-br from-gray-200 to-gray-500">
          
           <nav className="grid grid-rows-4 place-content-center">
             <NavLink
