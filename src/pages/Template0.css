@@ -9,10 +9,13 @@
 }
 
 .resume0-container {
-    display: flex;  
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 1024px;
+    max-width: 700px; 
+    background: #fff;
+    margin: 0px auto 0px; 
+    box-shadow: 1px 1px 2px #DAD7D7;
+    border-radius: 3px;  
+    padding: 40px;
+    margin-top: 50px;
 }
 
 @media screen and (max-width: 1186px) {

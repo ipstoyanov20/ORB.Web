@@ -11,6 +11,9 @@
     "generate-api": "java -jar swagger-codegen-cli.jar generate -i https://localhost:7206/swagger/v1/swagger.json -l typescript-axios -o src/api/"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.4.0",
     "axois": "^0.0.1-security",
     "localforage": "^1.10.0",
@@ -18,7 +21,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.1",
-    "sort-by": "^1.2.0",
+    "sort-by": "^0.0.2",
     "tw-elements": "^1.0.0-beta2"
   },
   "devDependencies": {

@@ -15,6 +15,7 @@ import { DashBoard } from "./pages/DashBoard";
 import { Info } from "./pages/Info";
 import { Template0 } from "./pages/Template0";
 import { Template1 } from "./pages/Template1";
+import { Template2 } from "./pages/Template2";
 import { MyResumes } from "./pages/MyResumes";
 
 
@@ -31,6 +32,7 @@ const App = createBrowserRouter(
           <Route path='personal' element={<Info />} />
           <Route path='template0' element={<Template0 />} />
           <Route path='template1' element={<Template1 />} />
+          <Route path='template2' element={<Template2 />} />
           <Route path='myresumes' element={<MyResumes />} />
         </Route>
       </Route>
