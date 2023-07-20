@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import storageService from "../services/storage-service";
 
@@ -41,7 +41,7 @@ function Sidebar() {
               to="/panel/myresumes"
             >
               My Resumes
-            </Link>
+            </NavLink>
             <button
               className="rounded-b-md relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
               onClick={logOut}
