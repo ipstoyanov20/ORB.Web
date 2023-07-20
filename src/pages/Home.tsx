@@ -11,7 +11,7 @@ const Home = () => {
             online. Browse our templates, then easily build your
             resume.
           </p>
-          <Link to='/login' className="grid w-32 mt-5 text-left text-black transition-all duration-150 rounded-lg h-14 place-content-center text-bold hover:bg-slate-300 bg-slate-50">
+          <Link to='/login' className="grid w-32 mt-5 text-left text-white transition-all duration-150 rounded-lg hover:text-black h-14 place-content-center text-bold hover:bg-slate-300 bg-slate-400">
             Start creating
           </Link>
         </div>

@@ -161,7 +161,7 @@ function Signup()
           >
           </input>
         
-          <button id="submit" type="submit" onClick={submit} className="m-3 text-black transition-all duration-150 rounded-sm hover:bg-slate-300 bg-slate-50 ">
+          <button id="submit" type="submit" onClick={submit} className="m-3 text-black transition-all duration-150 rounded hover:bg-slate-300 bg-slate-50 ">
             Sign up
           </button>
 
