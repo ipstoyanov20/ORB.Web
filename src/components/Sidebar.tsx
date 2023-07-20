@@ -2,7 +2,6 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import storageService from "../services/storage-service";
 
-
 function Sidebar() {
   const navigate = useNavigate();
   
@@ -13,9 +12,9 @@ function Sidebar() {
 
     return (
       <>
-        <div className='z-[-1] fixed right-0 top-0 bg-gray-200 w-[100%] h-[100%]'></div>
+        <div className='z-[-1] fixed right-0 top-0 bg-gray-200 w-[100%] h-screen'></div>
 
-        <div className="grid place-content-start shadow-2xl fixed left-0 top-0 p-5 w-[20%] h-[100%] bg-gradient-to-br from-gray-200 to-gray-500">
+        <div className="z-50 grid place-content-start shadow-2xl fixed left-0 top-0 p-5 h-[100%] bg-gradient-to-br from-gray-200 to-gray-500">
          
           <nav className="grid grid-rows-4 place-content-center">
             <NavLink
@@ -33,6 +32,7 @@ function Sidebar() {
             <NavLink
               className="relative p-4 font-bold text-left text-white transition-all duration-150 bg-gray-500 hover:bg-gray-600"
               to="/panel/templates"
+              id="templates"
             >
               Templates
             </NavLink>

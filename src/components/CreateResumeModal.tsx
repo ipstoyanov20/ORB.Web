@@ -89,17 +89,18 @@ function CreateResumeModal({onCloseModal, onCreateResume}:{onCloseModal:() => vo
           {templates.map((template, index) => {
             return (
               <>
-                <div key={template.id} className="py-2">
-                  <input
-                    type="radio"
-                    name="template"
-                    title="template"
-                    value={template.id || ""}
-                    defaultChecked={index === 0}
-                    onClick={() => setTemplateId(template.id || "")}
-                  />
-                  <label htmlFor="template">{template.name}</label>
-                </div>
+                <button onClick={() => setTemplateId(template.id || "")} key={template.id} className="py-2 bg-gray-50 group">
+                    <input
+                      className="bg-gray-100"
+                      type="radio"
+                      name="template"
+                      title="template"
+                      value={template.id || ""}
+                      defaultChecked={index === 0}
+                      id={template.id?template.id:undefined}
+                    />
+                  <label htmlFor={template.id?template.id:undefined}>{" "+template.name}</label>
+                </button>
               </>
             );
           })}

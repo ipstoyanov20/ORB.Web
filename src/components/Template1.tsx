@@ -1,10 +1,11 @@
-import './Template1.css';
+import '../pages/styles/Template1.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-export const Template1: React.FC = () => {
+function Template1() {
+
   const data = {
     "FullName": "Lorem Ipsum",
     "ImageUrl": "https://cdn.pixabay.com/photo/2023/01/28/22/09/ai-generated-7751805_1280.jpg",
@@ -35,16 +36,16 @@ export const Template1: React.FC = () => {
         "StartDate": "69.06.2012",
         "EndDate": "42.07.2012",
       }
-    ]
+    ]/*relative grid place-items-center */
   };
 
   return (
     <div className="resume1-all-container">
-      <div className="resume1-left-button-container">
-        <button onClick={() => window.location.href = 'http://localhost:5173/panel/template0'}> <FontAwesomeIcon className="mx-3" icon={faArrowLeft} /> </button>
-      </div>
+      {/* <div className="resume1-left-button-container">
+        <button onClick={() => window.location.href = 'http://localhost:5173/panel/templates'}> <FontAwesomeIcon className="mx-3" icon={faArrowLeft} /> </button>
+      </div> */}
       <div className="resume1 ml-[20%]">
-        <div className="resume1-container">
+        <div className="resume1-container relative h-[95%]">
           <div className="col-container">
             <div className="strip1 col">
               <h1 className="section-title text-blue">{data.FullName}</h1>
@@ -93,9 +94,11 @@ export const Template1: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="resume1-right-button-container">
-        <button onClick={() => window.location.href = 'http://localhost:5173/panel/template2'}> <FontAwesomeIcon className="mx-3" icon={faArrowRight} /> </button>
-      </div>
+      {/* <div className="resume1-right-button-container">
+        <button onClick={() => window.location.href = 'http://localhost:5173/panel/templates/template2'}> <FontAwesomeIcon className="mx-3" icon={faArrowRight} /> </button>
+      </div> */}
     </div>
   );
 }
+
+export default Template1

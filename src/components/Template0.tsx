@@ -1,4 +1,4 @@
-import './Template0.css';
+import '../pages/styles/Template0.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -13,8 +13,8 @@ import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-export const Template0: React.FC = () => {
 
+function Template0() {
 
     const data = {
         "FullName": "First n Last name",
@@ -51,12 +51,12 @@ export const Template0: React.FC = () => {
     };
 
     return (
-        <div className="resume0-all-container">
-            <div className="resume0-left-button-container">
-        <button onClick={() => window.location.href = 'http://localhost:5173/panel/template0'}> <FontAwesomeIcon className="mx-3" icon={faArrowLeft} /> </button>
-      </div>
+        <div className="resume0-all-container ">
+            {/* <div className="resume0-left-button-container">
+                <button onClick={() => window.location.href = 'http://localhost:5173/panel/templates/template2'}> <FontAwesomeIcon className="mx-3" icon={faArrowLeft} /> </button>
+            </div> */}
             <div className="resume0 ml-[20%]">
-                <div className="resume0-container">
+                <div className="resume0-container h-[95%]">
                     <div className="dark-side">
                         <div className="image-container">
                             <img className="photo"
@@ -104,10 +104,11 @@ export const Template0: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="resume0-right-button-container">
-                <button className="rounded-button" onClick={() => window.location.href = 'http://localhost:5173/panel/template1'}> <FontAwesomeIcon className="mx-3" icon={faArrowRight} /> </button>
-            </div>
+            {/* <div className="resume0-right-button-container">
+                <button className="rounded-button" onClick={() => window.location.href = 'http://localhost:5173/panel/templates/template1'}> <FontAwesomeIcon className="mx-3" icon={faArrowRight} /> </button>
+            </div> */}
         </div>
     );
 }
 
+export default Template0;

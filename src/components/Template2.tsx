@@ -1,11 +1,12 @@
-import './Template2.css';
+import '../pages/styles/Template2.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import { faUserGraduate } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-export const Template2: React.FC = () => {
+function Template2() {
+
     const data = {
         "FullName": "Lorem Ipsum",
         "ImageUrl": "https://cdn.pixabay.com/photo/2023/01/28/22/09/ai-generated-7751805_1280.jpg",
@@ -41,12 +42,12 @@ export const Template2: React.FC = () => {
 
     return (
         <div className="resume2-all-container">
-            <div className="resume2-left-button-container">
-                <button onClick={() => window.location.href = 'http://localhost:5173/panel/template1'}> <FontAwesomeIcon className="mx-3" icon={faArrowLeft} /> </button>
-            </div>
-            <div className="resume2 ml-[20%]">
-                <div className="resume2-container">
-                    <div className="header">
+            {/* <div className="resume2-left-button-container">
+                <button onClick={() => window.location.href = 'http://localhost:5173/panel/templates/template1'}> <FontAwesomeIcon className="mx-3" icon={faArrowLeft} /> </button>
+            </div> */}
+            <div className="resume2 ml-[20%] relative">
+                <div className="resume2-container h-[95%]">
+                    <div className="header ">
                         <div className="image-container">
                             <img className="photo"
                                 src={data.ImageUrl}
@@ -94,9 +95,11 @@ export const Template2: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="resume2-right-button-container">
-                <button onClick={() => window.location.href = 'http://localhost:5173/panel/template1'}> <FontAwesomeIcon className="mx-3" icon={faArrowRight} /> </button>
-            </div>
+            {/* <div className="resume2-right-button-container">
+                <button onClick={() => window.location.href = 'http://localhost:5173/panel/templates'}> <FontAwesomeIcon className="mx-3" icon={faArrowRight} /> </button>
+            </div> */}
         </div>
     );
 }
+
+export default Template2;

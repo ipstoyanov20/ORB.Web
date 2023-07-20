@@ -62,13 +62,17 @@ function UploadPhotoComponent({personalInfoVM, onCloseModal}:{personalInfoVM: Pe
     }
     return (
         <>
-            <div className="p-5">
-                <div className="mb-3">
-                    <label htmlFor="formFile" className="form-label">Upload Photo</label>
+            <div className="m-5">
+                <div className="text-center ">
+                    <label htmlFor="formFile" className="form-label">Upload Photo</label><br></br>
+                </div>
+                <div className="flex items-center justify-center mb-6">
                     <input className="form-control" type="file" id="formFile"  onChange={(e) => setFile(e.target.files?.[0] || null)} accept="image/*" multiple={false} />
                 </div>
-                <button className="btn btn-primary" onClick={uploadPhoto} disabled={isSending}>Upload</button>
-                <button className="btn btn-secondary" onClick={onCloseModal} disabled={isSending}>Cancel</button>
+                <div className="flex items-center justify-center">
+                    <button className="rounded p-2.5 mx-3 text-white hover:text-green-400 transition-all duration-150 hover:bg-gray-600 bg-gray-500 btn btn-primary" onClick={uploadPhoto} disabled={isSending}>Upload</button>
+                    <button className="p-2.5 mx-3 text-white rounded hover:text-red-400 transition-all duration-150 hover:bg-gray-600 bg-gray-500  btn btn-secondary" onClick={onCloseModal} disabled={isSending}>Cancel</button>
+                </div>
             </div>
         </>
     );
