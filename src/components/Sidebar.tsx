@@ -13,37 +13,37 @@ function Sidebar() {
 
     return (
       <>
-        <div className='z-[-1] rounded-md absolute right-0 top-0 bg-gray-200 w-[80%] h-[100%]'></div>
+        <div className='z-[-1] rounded-md absolute right-0 top-0 bg-gray-200 w-[100%] h-[100%]'></div>
 
-        <div className="grid place-content-start shadow-2xl absolute left-0 top-0 p-5 w-[20%] h-[100%] rounded-md bg-gradient-to-br from-gray-200 to-gray-500">
+        <div className="z-50 grid place-content-start shadow-2xl absolute left-0 top-0 p-5 h-[100%] rounded-md bg-gradient-to-br from-gray-200 to-gray-500">
          
-          <nav className="grid place-content-center grid-rows-4">
+          <nav className="grid grid-rows-4 place-content-center">
             <NavLink
-              className=" rounded-t-md relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
+              className="relative p-4 font-bold text-left text-white transition-all duration-150 bg-gray-500 rounded-t-md hover:bg-gray-600"
               to="/panel/dashboard"
             >
               Dashboard
             </NavLink>
             <NavLink
-              className=" font-bold relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
+              className="relative p-4 font-bold text-left text-white transition-all duration-150 bg-gray-500 hover:bg-gray-600"
               to="/panel/settings"
             >
               Account Settings
             </NavLink>
             <NavLink
-              className=" font-bold relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
+              className="relative p-4 font-bold text-left text-white transition-all duration-150 bg-gray-500 hover:bg-gray-600"
               to="/panel/templates"
             >
               Templates
             </NavLink>
             <NavLink
-              className="font-bold relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
+              className="relative p-4 font-bold text-left text-white transition-all duration-150 bg-gray-500 hover:bg-gray-600"
               to="/panel/myresumes"
             >
               My Resumes
             </NavLink>
             <button
-              className="rounded-b-md relative p-4 text-left text-white bg-gray-500 hover:bg-gray-600"
+              className="relative p-4 font-bold text-left text-white transition-all duration-150 bg-gray-500 hover:text-red-500 rounded-b-md hover:bg-gray-600"
               onClick={logOut}
             >
               Log out
