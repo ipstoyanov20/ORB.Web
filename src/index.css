@@ -49,3 +49,15 @@ button {
     background-color: #f9f9f9;
   }
 }
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: inline;
+  vertical-align: middle;
+}

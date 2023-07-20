@@ -1,4 +1,4 @@
-import { ResumesApi, ResumeIM, ResumeVM } from "../api";
+import { ResumesApi, ResumeIM, ResumeVM, EducationVM, WorkExperienceVM, ShareIM } from "../api";
 import { AxiosResponse } from "axios";
 import { WebApiService } from "./web-api-service"
 
@@ -38,6 +38,26 @@ export class ResumesService extends WebApiService {
 
     public async makeDeleteResumeRequest(id: string): Promise<AxiosResponse<void>> {
         return await this.resumesApi.apiResumesIdDelete(id, this.generateHeader());
+    }
+
+    public async makeGetEducationsFromResumeIdRequest(id: string): Promise<AxiosResponse<Array<EducationVM>>> {
+        return await this.resumesApi.apiResumesIdEducationsGet(id, this.generateHeader());
+    }
+
+    public async makeGetWorkExperienceFromResumeIdRequest(id: string): Promise<AxiosResponse<Array<WorkExperienceVM>>> {
+        return await this.resumesApi.apiResumesIdWorkGet(id, this.generateHeader());
+    }
+
+    public async downloadResumeAsPdf(id: string): Promise<AxiosResponse<string>> {
+        return await this.resumesApi.apiResumesIdDownloadGet(id, this.generateHeader()) as unknown as AxiosResponse<string>;
+    }
+
+    public async shareResume(id: string, email: string): Promise<AxiosResponse<void>> {
+        const shareIM: ShareIM = ({
+            email: email
+        });
+
+        return await this.resumesApi.apiResumesIdPost(id, shareIM, this.generateHeader());
     }
 }
 

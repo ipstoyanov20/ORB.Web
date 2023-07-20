@@ -18,23 +18,25 @@ export class WorkExperienceService extends WebApiService {
         return await this.WEApi.apiWorkExperienceIdGet(id, this.generateHeader());
     }
 
-    public async makeUpdateWorkExperienceFromIdRequest(id: string, companyName: string, position: string, description: string, startDate: string): Promise<AxiosResponse<WorkExperienceVM>> {
-        let body: WorkExperienceUM = ({
+    public async makeUpdateWorkExperienceFromIdRequest(id: string, companyName: string, position: string, description: string, startDate: string, endDate: string | null): Promise<AxiosResponse<WorkExperienceVM>> {
+        const body: WorkExperienceUM = ({
             companyName,
             position,
             description,
             startDate,
+            endDate
         })
         return await this.WEApi.apiWorkExperienceIdPut(id, body,  this.generateHeader());
     }
 
-    public async makeNewWorkExperienceRequest(resumeId: string, companyName: string, position: string, description: string, startDate: string): Promise<AxiosResponse<WorkExperienceVM>> {
-        let body: WorkExperienceIM = ({
+    public async makeNewWorkExperienceRequest(resumeId: string, companyName: string, position: string, description: string, startDate: string, endDate: string | null): Promise<AxiosResponse<WorkExperienceVM>> {
+        const body: WorkExperienceIM = ({
             resumeId,
             companyName,
             position,
             description,
             startDate,
+            endDate
         })
 
         return await this.WEApi.apiWorkExperiencePost(body, this.generateHeader());

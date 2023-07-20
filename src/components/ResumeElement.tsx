@@ -2,13 +2,14 @@ import RelativeTime from "@yaireo/relative-time";
 import { ResumeVM } from "../api";
 import resumesService from "../services/resumes-service";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 function ResumeElement({resume, onResumeDelete}:{resume: ResumeVM, onResumeDelete: () => Promise<void>}) {
     const lastModified = new Date(resume.lastModified);
     const offset = lastModified.getTimezoneOffset();
     const correctedLastModified = new Date(lastModified.getTime() - offset * 60 * 1000);
     const relativeTime = new RelativeTime().from(Date.parse(correctedLastModified));
-
+    const navigator = useNavigate();
 
     const deleteResume = async () => {
         try {
@@ -42,7 +43,7 @@ function ResumeElement({resume, onResumeDelete}:{resume: ResumeVM, onResumeDelet
     }
 
     return (
-        <tr className="transition-all duration-150 bg-gray-300 rounded-md hover:bg-gray-400 hover:text-white">
+        <tr  onClick={() => navigator(`/panel/resumes/${resume.id}`)} className="transition-all duration-150 bg-gray-300 rounded-md hover:bg-gray-400 hover:text-white">
             <td className="p-5">{resume.title}</td>
             {(resume.lastModified == resume.creationTime) ? (
                 <td>Created {relativeTime}</td>

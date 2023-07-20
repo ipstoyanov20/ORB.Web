@@ -16,41 +16,41 @@ export class EducationsService extends WebApiService {
     }
     
     /*Post New Education*/
-    public async makePostEducationRequest(resumeId: string, schoolName:string, degree:string, fieldOfStudy:string, description:string, startDate: string, endDate: string ): Promise<AxiosResponse<EducationVM, any>> {
-        const EducationIM: EducationIM = ({
-           resumeId: resumeId,
-           schoolName : schoolName,
-           degree : degree,
-           fieldOfStudy : fieldOfStudy,
-           description : description,
-           startDate : startDate,
-           endDate : endDate
-        
-        });
-    
-        return await this.educationsApi.apiEducationsPost(EducationIM, this.generateHeader());
-        }
+    public async makePostEducationRequest(resumeId: string, schoolName:string, degree:string, fieldOfStudy:string, description:string, startDate: string, endDate: string | null): Promise<AxiosResponse<EducationVM, any>> {
+      const EducationIM: EducationIM = {
+        resumeId: resumeId,
+        schoolName: schoolName,
+        degree: degree,
+        fieldOfStudy: fieldOfStudy,
+        description: description,
+        startDate: startDate,
+        endDate: endDate,
+      };
+
+      return await this.educationsApi.apiEducationsPost(
+        EducationIM,
+        this.generateHeader()
+      );
+    }
     /*Update Education*/
-    public async makePutEducationRequest(id: string, schoolName: string, degree:string, fieldOfStudy:string, description:string, startDate: string, endDate: string):Promise<AxiosResponse<EducationVM,any>>{
-        const EducationUM : EducationUM = ({
-         
+    public async makePutEducationRequest(id: string, schoolName: string, degree:string, fieldOfStudy:string, description:string, startDate: string, endDate: string | null):Promise<AxiosResponse<EducationVM,any>>{
+        
+      const EducationUM : EducationUM = ({
             schoolName : schoolName,
             degree : degree,
             fieldOfStudy: fieldOfStudy,
             description : description,
             startDate : startDate,
             endDate: endDate
-
-
         });
 
-        return await this.educationsApi.apiEducationsIdPut(id,EducationUM, this.generateHeader());
+        return await this.educationsApi.apiEducationsIdPut(id, EducationUM, this.generateHeader());
     }
+    
     /*Delete Education*/
+
     public async MakeDeleteEducationRequest( id: string):Promise<AxiosResponse<void,any>>{
-
       return await this.educationsApi.apiEducationsIdDelete(id, this.generateHeader());
-
     }
    
     

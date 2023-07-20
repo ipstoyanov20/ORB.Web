@@ -5,6 +5,7 @@ import { UserVM } from "../api";
 import { AxiosError } from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import UploadPhotoComponent from "../components/UploadPhotoComponent" 
 
 let fNameI: HTMLInputElement | null; 
 let fNameV: string | undefined | null; 

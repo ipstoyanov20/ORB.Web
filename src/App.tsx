@@ -9,7 +9,7 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import NavMenu from './components/NavMenu'
 import './App.css'
-import { Resumes } from "./pages/CreateResumesPage";
+import { Resumes } from "./pages/EditResumesPage";
 import Sidebar from "./components/Sidebar";
 import { DashBoard } from "./pages/DashBoard";
 import { Info } from "./pages/Info";
@@ -39,7 +39,7 @@ const App = createBrowserRouter(
           <Route path="settings" element={<Info />} />
           <Route path="templates" element={<Templates />} />
           <Route path="myresumes" element={<MyResumes />} />
-          <Route path="resumes" element={<Resumes />} />
+          <Route path="resumes/:id" element={<Resumes />} />
         </Route>
       </Route>
     </>
