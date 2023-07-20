@@ -35,7 +35,7 @@ const App = createBrowserRouter(
       </Route>
       <Route element={<AuthGuardWhenLogin />}>
         <Route path="panel" element={<Sidebar />}>
-          <Route index element={<DashBoard />} />
+          <Route path="dashboard" element={<DashBoard />} />
           <Route path="settings" element={<Info />} />
           <Route path="templates" element={<Templates />} />
           <Route path="myresumes" element={<MyResumes />} />

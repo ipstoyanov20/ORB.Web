@@ -14,6 +14,7 @@ let emailI: HTMLInputElement | null;
 let emailV: string | undefined;
 
 let userData: any = {
+  id: String,
   fName: String,
   lName: String,
   email: String,
@@ -37,6 +38,7 @@ export const Info:React.FC = () => {
         setInfo([{"First Name": response2.data.firstName, "Last Name": response2.data.lastName},
         {"Email": response2.data.email}])
         
+        userData.id = response2.data.id;
         userData.fName = response2.data.firstName;
         userData.lName = response2.data.lastName;
         userData.email = response2.data.email;
@@ -44,7 +46,6 @@ export const Info:React.FC = () => {
       )();
       
     } catch (error) {
-
       console.log(error);
     }
   }, []);
@@ -115,10 +116,9 @@ export const Info:React.FC = () => {
       <div className="text-black z-1 absolute w-[80%] h-[100%] top-0 right-0 grid place-items-center ">
         <div className="w-[40%] h-[50%] absolute top-30 rounded-md shadow-xl bg-gray-400">
           <div className="flex p-5 rounded-lg justify-center justify items-center content-center">
-            <img className="w-20 h-20" src="../src/assets/girl.png" alt="" />
+            <img className="w-20 h-20 rounded-md" src={`https://api.dicebear.com/6.x/initials/svg?seed=${userData.fName[0]+userData.lName[0]+userData.id}`} alt="" />
             <span className="grow">
-              <p className="ml-5 text-left text-white">{`Welcome ${userData.fName} ${userData.lName}`}</p>
-              <p className="ml-5 text-md text-left text-gray-500">Change Avatar</p>
+              <p className="ml-5 text-left text-white">{`${userData.fName} ${userData.lName}`}</p>
             </span>
           </div>
 

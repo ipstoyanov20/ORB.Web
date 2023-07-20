@@ -14,49 +14,43 @@
 /**
  * 
  * @export
- * @interface PersonalInfoVM
+ * @interface PersonalInfoIdBody
  */
-export interface PersonalInfoVM {
+export interface PersonalInfoIdBody {
     /**
      * 
      * @type {string}
-     * @memberof PersonalInfoVM
+     * @memberof PersonalInfoIdBody
      */
-    id?: string | null;
+    fullName: string;
     /**
      * 
      * @type {string}
-     * @memberof PersonalInfoVM
+     * @memberof PersonalInfoIdBody
      */
-    fullName?: string | null;
+    address: string;
     /**
      * 
      * @type {string}
-     * @memberof PersonalInfoVM
+     * @memberof PersonalInfoIdBody
      */
-    address?: string | null;
+    phoneNumber: string;
     /**
      * 
      * @type {string}
-     * @memberof PersonalInfoVM
+     * @memberof PersonalInfoIdBody
      */
-    phoneNumber?: string | null;
+    email: string;
     /**
      * 
      * @type {string}
-     * @memberof PersonalInfoVM
+     * @memberof PersonalInfoIdBody
      */
-    email?: string | null;
+    summary: string;
     /**
      * 
-     * @type {string}
-     * @memberof PersonalInfoVM
+     * @type {Blob}
+     * @memberof PersonalInfoIdBody
      */
-    summary?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof PersonalInfoVM
-     */
-    personImageURL?: string | null;
+    personImage?: Blob;
 }

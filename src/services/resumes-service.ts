@@ -19,7 +19,7 @@ export class ResumesService extends WebApiService {
     }
 
     public async makeUpdateResumeFromIdRequest(id: string, resumeTitle: string, templateId: string): Promise<AxiosResponse<ResumeVM>> {
-        let body:ResumeIM = ({
+        const body:ResumeIM = ({
             title: resumeTitle,
             templateId: templateId,
         });
@@ -28,12 +28,16 @@ export class ResumesService extends WebApiService {
     }
 
     public async makeNewResumeRequest(resumeTitle: string, templateId: string): Promise<AxiosResponse<ResumeVM>> {
-        let body:ResumeIM = ({
+        const body:ResumeIM = ({
             title: resumeTitle,
             templateId: templateId,
         });
 
         return await this.resumesApi.apiResumesPost(body, this.generateHeader());
+    }
+
+    public async makeDeleteResumeRequest(id: string): Promise<AxiosResponse<void>> {
+        return await this.resumesApi.apiResumesIdDelete(id, this.generateHeader());
     }
 }
 

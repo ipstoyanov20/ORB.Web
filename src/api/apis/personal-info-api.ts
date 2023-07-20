@@ -16,7 +16,6 @@ import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
-import { PersonalInfoIM } from '../models';
 import { PersonalInfoVM } from '../models';
 import { ResumeVM } from '../models';
 /**
@@ -77,14 +76,19 @@ export const PersonalInfoApiAxiosParamCreator = function (configuration?: Config
          * 
          * @summary Update a personal info by its id.
          * @param {string} id Id of the personal info to update.
-         * @param {PersonalInfoIM} [body] Updated information of the personal info.
+         * @param {string} [fullName] 
+         * @param {string} [address] 
+         * @param {string} [phoneNumber] 
+         * @param {string} [email] 
+         * @param {string} [summary] 
+         * @param {Blob} [personImage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiPersonalInfoIdPut: async (id: string, body?: PersonalInfoIM, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        apiPersonalInfoIdPutForm: async (id: string, fullName?: string, address?: string, phoneNumber?: string, email?: string, summary?: string, personImage?: Blob, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             if (id === null || id === undefined) {
-                throw new RequiredError('id','Required parameter id was null or undefined when calling apiPersonalInfoIdPut.');
+                throw new RequiredError('id','Required parameter id was null or undefined when calling apiPersonalInfoIdPutForm.');
             }
             const localVarPath = `/api/PersonalInfo/{id}`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
@@ -97,6 +101,7 @@ export const PersonalInfoApiAxiosParamCreator = function (configuration?: Config
             const localVarRequestOptions :AxiosRequestConfig = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+            const localVarFormParams = new FormData();
 
             // authentication Bearer required
             if (configuration && configuration.apiKey) {
@@ -106,8 +111,32 @@ export const PersonalInfoApiAxiosParamCreator = function (configuration?: Config
                 localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
-            localVarHeaderParameter['Content-Type'] = 'application/json';
 
+            if (fullName !== undefined) { 
+                localVarFormParams.append('FullName', fullName as any);
+            }
+
+            if (address !== undefined) { 
+                localVarFormParams.append('Address', address as any);
+            }
+
+            if (phoneNumber !== undefined) { 
+                localVarFormParams.append('PhoneNumber', phoneNumber as any);
+            }
+
+            if (email !== undefined) { 
+                localVarFormParams.append('Email', email as any);
+            }
+
+            if (summary !== undefined) { 
+                localVarFormParams.append('Summary', summary as any);
+            }
+
+            if (personImage !== undefined) { 
+                localVarFormParams.append('PersonImage', personImage as any);
+            }
+
+            localVarHeaderParameter['Content-Type'] = 'multipart/form-data';
             const query = new URLSearchParams(localVarUrlObj.search);
             for (const key in localVarQueryParameter) {
                 query.set(key, localVarQueryParameter[key]);
@@ -118,8 +147,7 @@ export const PersonalInfoApiAxiosParamCreator = function (configuration?: Config
             localVarUrlObj.search = (new URLSearchParams(query)).toString();
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+            localVarRequestOptions.data = localVarFormParams;
 
             return {
                 url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
@@ -153,12 +181,17 @@ export const PersonalInfoApiFp = function(configuration?: Configuration) {
          * 
          * @summary Update a personal info by its id.
          * @param {string} id Id of the personal info to update.
-         * @param {PersonalInfoIM} [body] Updated information of the personal info.
+         * @param {string} [fullName] 
+         * @param {string} [address] 
+         * @param {string} [phoneNumber] 
+         * @param {string} [email] 
+         * @param {string} [summary] 
+         * @param {Blob} [personImage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiPersonalInfoIdPut(id: string, body?: PersonalInfoIM, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<ResumeVM>>> {
-            const localVarAxiosArgs = await PersonalInfoApiAxiosParamCreator(configuration).apiPersonalInfoIdPut(id, body, options);
+        async apiPersonalInfoIdPutForm(id: string, fullName?: string, address?: string, phoneNumber?: string, email?: string, summary?: string, personImage?: Blob, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<ResumeVM>>> {
+            const localVarAxiosArgs = await PersonalInfoApiAxiosParamCreator(configuration).apiPersonalInfoIdPutForm(id, fullName, address, phoneNumber, email, summary, personImage, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -187,12 +220,17 @@ export const PersonalInfoApiFactory = function (configuration?: Configuration, b
          * 
          * @summary Update a personal info by its id.
          * @param {string} id Id of the personal info to update.
-         * @param {PersonalInfoIM} [body] Updated information of the personal info.
+         * @param {string} [fullName] 
+         * @param {string} [address] 
+         * @param {string} [phoneNumber] 
+         * @param {string} [email] 
+         * @param {string} [summary] 
+         * @param {Blob} [personImage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiPersonalInfoIdPut(id: string, body?: PersonalInfoIM, options?: AxiosRequestConfig): Promise<AxiosResponse<ResumeVM>> {
-            return PersonalInfoApiFp(configuration).apiPersonalInfoIdPut(id, body, options).then((request) => request(axios, basePath));
+        async apiPersonalInfoIdPutForm(id: string, fullName?: string, address?: string, phoneNumber?: string, email?: string, summary?: string, personImage?: Blob, options?: AxiosRequestConfig): Promise<AxiosResponse<ResumeVM>> {
+            return PersonalInfoApiFp(configuration).apiPersonalInfoIdPutForm(id, fullName, address, phoneNumber, email, summary, personImage, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -219,12 +257,17 @@ export class PersonalInfoApi extends BaseAPI {
      * 
      * @summary Update a personal info by its id.
      * @param {string} id Id of the personal info to update.
-     * @param {PersonalInfoIM} [body] Updated information of the personal info.
+     * @param {string} [fullName] 
+     * @param {string} [address] 
+     * @param {string} [phoneNumber] 
+     * @param {string} [email] 
+     * @param {string} [summary] 
+     * @param {Blob} [personImage] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PersonalInfoApi
      */
-    public async apiPersonalInfoIdPut(id: string, body?: PersonalInfoIM, options?: AxiosRequestConfig) : Promise<AxiosResponse<ResumeVM>> {
-        return PersonalInfoApiFp(this.configuration).apiPersonalInfoIdPut(id, body, options).then((request) => request(this.axios, this.basePath));
+    public async apiPersonalInfoIdPutForm(id: string, fullName?: string, address?: string, phoneNumber?: string, email?: string, summary?: string, personImage?: Blob, options?: AxiosRequestConfig) : Promise<AxiosResponse<ResumeVM>> {
+        return PersonalInfoApiFp(this.configuration).apiPersonalInfoIdPutForm(id, fullName, address, phoneNumber, email, summary, personImage, options).then((request) => request(this.axios, this.basePath));
     }
 }

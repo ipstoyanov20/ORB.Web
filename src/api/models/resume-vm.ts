@@ -67,6 +67,12 @@ export interface ResumeVM {
     templateId?: string | null;
     /**
      * 
+     * @type {boolean}
+     * @memberof ResumeVM
+     */
+    isDeleted?: boolean;
+    /**
+     * 
      * @type {Array<string>}
      * @memberof ResumeVM
      */
