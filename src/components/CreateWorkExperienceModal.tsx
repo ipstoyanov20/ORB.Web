@@ -30,7 +30,7 @@ function CreateWorkExperienceModal({resumeId, onCloseModal}:{resumeId: string, o
                 return;
             }
 
-            await workExperienceService.makeNewWorkExperienceRequest(resumeId, companyName, position, description, startData, endData ? startData : null);
+            await workExperienceService.makeNewWorkExperienceRequest(resumeId, companyName, position, description, startData, endData ? endData : null);
 
             toast.success(`Work Experience created successfully.`, {
                 position: "bottom-center",

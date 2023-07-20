@@ -93,11 +93,12 @@ function CreateResumeModal({onCloseModal, onCreateResume}:{onCloseModal:() => vo
                   <input
                     type="radio"
                     name="template"
+                    title="template"
                     value={template.id || ""}
                     defaultChecked={index === 0}
                     onClick={() => setTemplateId(template.id || "")}
                   />
-                  <label>{template.name}</label>
+                  <label htmlFor="template">{template.name}</label>
                 </div>
               </>
             );
