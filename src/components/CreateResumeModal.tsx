@@ -99,16 +99,6 @@ function CreateResumeModal({onCloseModal, onCreateResume}:{onCloseModal:() => vo
                   />
                   <label>{template.name}</label>
                 </div>
-                <div key={template.id} className="py-2">
-                  <input
-                    type="radio"
-                    name="template"
-                    value={template.id || ""}
-                    defaultChecked={index === 0}
-                    onClick={() => setTemplateId(template.id || "")}
-                  />
-                  <label>{template.name}</label>
-                </div>
               </>
             );
           })}
