@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Ysabeau+SC:wght@300&display=swap');
 
 .resume1>* {
 	font-family: Arial, sans-serif;
@@ -8,6 +9,8 @@
 }
 
 .resume1-container {
+    min-width: 600px;
+    max-width: 700px;
     background: #fff;
     margin: 0px auto 0px; 
     box-shadow: 1px 1px 2px #DAD7D7;
