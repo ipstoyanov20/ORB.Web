@@ -1,37 +1,53 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import storageService from "../services/storage-service";
+
 
 function Sidebar() {
+  const navigate = useNavigate();
+  
+  const logOut = () => {
+    storageService.deleteUserData();
+    navigate("/");
+  }
+
     return (
       <>
         <div className='z-[-1] absolute right-0 top-0 bg-gray-200 w-[80%] h-[100%]'></div>
 
         <div className="grid place-content-start shadow-2xl fixed left-0 top-0 p-5 w-[20%] h-[100%] bg-gradient-to-br from-gray-200 to-gray-500">
          
-          <nav className="grid place-content-center grid-rows-4">
-            <Link
-              className=" rounded-t-md relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
-              to="/panel"
+          <nav className="grid grid-rows-4 place-content-center">
+            <NavLink
+              className="relative p-4 font-bold text-left text-white transition-all duration-150 bg-gray-500 rounded-t-md hover:bg-gray-600"
+              to="/panel/dashboard"
             >
               Dashboard
-            </Link>
-            <Link
-              className=" relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
-              to="/panel/personal"
+            </NavLink>
+            <NavLink
+              className="relative p-4 font-bold text-left text-white transition-all duration-150 bg-gray-500 hover:bg-gray-600"
+              to="/panel/settings"
             >
-              Personal Info
-            </Link>
-            <Link
-              className=" relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
+              Account Settings
+            </NavLink>
+            <NavLink
+              className="relative p-4 font-bold text-left text-white transition-all duration-150 bg-gray-500 hover:bg-gray-600"
               to="/panel/templates"
             >
               Templates
-            </Link>
-            <Link
-              className=" rounded-b-md relative p-4 text-left text-white bg-gray-700 hover:bg-gray-600"
+            </NavLink>
+            <NavLink
+              className="relative p-4 font-bold text-left text-white transition-all duration-150 bg-gray-500 hover:bg-gray-600"
               to="/panel/myresumes"
             >
               My Resumes
-            </Link>
+            </NavLink>
+            <button
+              className="relative p-4 font-bold text-left text-white transition-all duration-150 bg-gray-500 hover:text-red-500 rounded-b-md hover:bg-gray-600"
+              onClick={logOut}
+            >
+              Log out
+            </button>
           </nav>
         </div>
 
