@@ -42,7 +42,7 @@ function Signin() {
 
 
     }).catch(function(error) {
-      const message = error.response.data.message;
+      const message = error.response.data.message || error.response.data.errors[Object.keys(error.response?.data.errors)[0]];
       toast.error(`Verification error: ${message}`, {
         position: "bottom-center",
         autoClose: 5000,
