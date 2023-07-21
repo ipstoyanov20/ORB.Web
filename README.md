@@ -55,9 +55,9 @@ Pasting this line of code in **your favourite Terminal**:
 
 Start the [**ORB.Api**](https://github.com/SSIvanov19/ORB.Api) project and
 download all the needed packages via
-<pre>npm i</pre> 
+<pre>dotnet restore</pre> 
 and then run 
-<pre>npm run dev</pre>
+<pre>dotnet watch</pre>
 command in Terminal</li>
 
 **Congratz!** 🥳 Now you can repeat the same steps for the **ORB.Web** project and you will be all set up!
