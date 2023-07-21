@@ -33,7 +33,8 @@ We have also used technologies like **React Router, Vite, HandleBars** and **Toa
 ## 📄 Documents
 ### Presentation:
 - [**Resumify Presentation**](https://www.canva.com/design/DAFpLDgWSdI/B6tjaUtv5kqURjolo7Wwug/edit?utm_content=DAFpLDgWSdI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-
+### Documentation
+- [**Resumify Documentation**](https://docs.resumify.tech/)
 ## 📥 Installation & Set Up
 <p> To install our project on your machine you just need to clone it. This can be done by following these steps! </p>
 
