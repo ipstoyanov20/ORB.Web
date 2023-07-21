@@ -16,7 +16,7 @@ import { Info } from "./pages/Info";
 import { MyResumes } from "./pages/MyResumes";
 import AuthGuardWhenLogin from "./components/AuthGuardWhenLogin";
 import AuthGuardWhenLogout from "./components/AuthGuardWhenLogout";
-import Templates from "./pages/templates";
+import Templates from "./pages/Templates";
 
 
 const App = createBrowserRouter(
